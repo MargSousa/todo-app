@@ -12,11 +12,15 @@
       Challenge
     </a>
     <span> | </span>
-    <a href="">
+    <a href="https://compassionate-lamport-25e12e.netlify.app/">
       Solution
     </a>
   </h3>
 </div>
+
+## Preview
+
+![](./src/images/screenshot.png)
 
 ## Built With
 
@@ -34,7 +38,12 @@
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5) was to build an application to complete the given user stories.
+This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5) was to build an application to complete the given user stories:
+  - I can add a new task
+  - I can complete a task
+  - I can toggle between All, Active and Completed
+  - I can remove one or all tasks under the Completed tab
+  - Store the data in local storage that when I refresh the page I can still see my progress
 
 ## How To Use
 
