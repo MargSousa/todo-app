@@ -33,7 +33,7 @@ const List = ({ data, addNewItem, updateList }) => {
               <div className="list-item" key={item.id}>
                 <div className="list-text">
                   <input className="checkbox" type="checkbox" defaultChecked={item.completed} id={item.id} name={item.id} onChange={handleUpdate}/>
-                  <span className={item.completed ? 'completed list-text ' : ' list-text new'}>{item.task}</span>
+                  <span className={item.completed ? 'list-text completed' : 'list-text new'}>{item.task}</span>
                 </div>
               </div>
             )}

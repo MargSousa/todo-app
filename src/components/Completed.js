@@ -6,7 +6,7 @@ const Completed = ({ data, deleteItem, deleteAll, updateList }) => {
       <div className="list-item" key={item.id}>
         <div className="list-text">
           <input className="checkbox" type="checkbox" defaultChecked={item.completed} id={item.id} name={item.id} onChange={event => updateList(event)}/>
-          <span className={item.completed ? 'completed list-text' : 'new list-text'}>{item.task}</span>
+          <span className={item.completed ? 'list-text completed' : 'list-text new'}>{item.task}</span>
         </div>
         <span className="material-icons item-icon" id={item.id} onClick={event => deleteItem(event.target.id)}>delete_outline</span>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
 import List from './components/List';
@@ -6,40 +6,53 @@ import Completed from './components/Completed';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 
+const data = [
+  {
+    id: 0,
+    task: 'Oranges',
+    completed: false
+  },
+  {
+    id: 1,
+    task: 'Pizza',
+    completed: false
+  },
+  {
+    id: 2,
+    task: 'Cookies',
+    completed: false
+  },
+  {
+    id: 3,
+    task: 'Apples',
+    completed: true
+  },
+  {
+    id: 4,
+    task: 'Nachos',
+    completed: true
+  },
+]
+
 function App() {
 
-  const data = [
-    {
-      id: 0,
-      task: 'Oranges',
-      completed: false
-    },
-    {
-      id: 1,
-      task: 'Pizza',
-      completed: false
-    },
-    {
-      id: 2,
-      task: 'Cookies',
-      completed: false
-    },
-    {
-      id: 3,
-      task: 'Apples',
-      completed: true
-    },
-    {
-      id: 4,
-      task: 'Nachos',
-      completed: true
-    },
-  ]
-
-  const [list, setList] = useState(data);
+  const [list, setList] = useState([]);
 
   const activeItems = list.filter(item => item.completed === false );
   const completedItems = list.filter(item => item.completed === true);
+
+  useEffect(() => {
+    const localList = JSON.parse(localStorage.getItem("list"));
+    if(localList.length > 0) {
+      setList(localList);
+    } else {
+      setList(data);
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(list));
+  }, [list])
 
   const addNewItem = (item) => {
     const newItem = {
@@ -47,6 +60,7 @@ function App() {
       task: item,
       completed: false
     };
+
     setList([...list, newItem])
   }
 
