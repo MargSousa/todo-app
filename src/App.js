@@ -5,6 +5,7 @@ import List from './components/List';
 import Completed from './components/Completed';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
+import Footer from './components/Footer';
 
 const data = [
   {
@@ -93,18 +94,19 @@ function App() {
       <div className="App">
         <div className="main-title">#todo</div>
         <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <List data={list} type="all" addNewItem={addNewItem} updateList={updateList} />
+          </Route>
+          <Route exact path="/active">
+            <List data={activeItems} type="active" addNewItem={addNewItem} updateList={updateList} />
+          </Route>
+          <Route exact path="/completed">
+            <Completed data={completedItems} type="completed" deleteItem={handleDeleteItem} updateList={updateList} deleteAll={handleDeleteAll} />
+          </Route>
+        </Switch>       
       </div>
-      <Switch>
-        <Route exact path="/">
-          <List data={list} type="all" addNewItem={addNewItem} updateList={updateList} />
-        </Route>
-        <Route exact path="/active">
-          <List data={activeItems} type="active" addNewItem={addNewItem} updateList={updateList} />
-        </Route>
-        <Route exact path="/completed">
-          <Completed data={completedItems} type="completed" deleteItem={handleDeleteItem} updateList={updateList} deleteAll={handleDeleteAll} />
-        </Route>
-      </Switch>
+      <Footer />
     </Router>
   );
 }
