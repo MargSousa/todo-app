@@ -6,35 +6,35 @@ import Completed from './components/Completed';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 
-function App() {
+const data = [
+  {
+    id: 0,
+    task: 'Oranges',
+    completed: false
+  },
+  {
+    id: 1,
+    task: 'Pizza',
+    completed: false
+  },
+  {
+    id: 2,
+    task: 'Cookies',
+    completed: false
+  },
+  {
+    id: 3,
+    task: 'Apples',
+    completed: true
+  },
+  {
+    id: 4,
+    task: 'Nachos',
+    completed: true
+  },
+]
 
-  const data = [
-    {
-      id: 0,
-      task: 'Oranges',
-      completed: false
-    },
-    {
-      id: 1,
-      task: 'Pizza',
-      completed: false
-    },
-    {
-      id: 2,
-      task: 'Cookies',
-      completed: false
-    },
-    {
-      id: 3,
-      task: 'Apples',
-      completed: true
-    },
-    {
-      id: 4,
-      task: 'Nachos',
-      completed: true
-    },
-  ]
+function App() {
 
   const [list, setList] = useState([]);
 
