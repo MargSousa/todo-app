@@ -170,3 +170,25 @@ button:disabled {
 .info {
   color: #BDBDBD;
 }
+
+.footer {
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #A9A9A9;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #A9A9A9;
+  padding-top: 20px;
+  margin-top: 70px;
+}
+
+@media(max-width: 992px) {
+  .footer {
+    font-size: 12px;
+    width: 70%;
+  }
+}
