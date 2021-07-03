@@ -6,35 +6,35 @@ import Completed from './components/Completed';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 
-const data = [
-  {
-    id: 0,
-    task: 'Oranges',
-    completed: false
-  },
-  {
-    id: 1,
-    task: 'Pizza',
-    completed: false
-  },
-  {
-    id: 2,
-    task: 'Cookies',
-    completed: false
-  },
-  {
-    id: 3,
-    task: 'Apples',
-    completed: true
-  },
-  {
-    id: 4,
-    task: 'Nachos',
-    completed: true
-  },
-]
-
 function App() {
+
+  const data = [
+    {
+      id: 0,
+      task: 'Oranges',
+      completed: false
+    },
+    {
+      id: 1,
+      task: 'Pizza',
+      completed: false
+    },
+    {
+      id: 2,
+      task: 'Cookies',
+      completed: false
+    },
+    {
+      id: 3,
+      task: 'Apples',
+      completed: true
+    },
+    {
+      id: 4,
+      task: 'Nachos',
+      completed: true
+    },
+  ]
 
   const [list, setList] = useState([]);
 
@@ -43,11 +43,11 @@ function App() {
 
   useEffect(() => {
     const localList = JSON.parse(localStorage.getItem("list"));
-    if(localList.length > 0) {
+    if(localList !== null && localList.length > 0) {
       setList(localList);
     } else {
       setList(data);
-    }
+    } 
   }, [])
 
   useEffect(() => {
